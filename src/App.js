@@ -3,7 +3,7 @@ import './App.css';
 import {execHaloCmdWeb} from "@arx-research/libhalo/api/web.js";
 
 function App() {
-    const [statusText, setStatusText] = useState('Click on the button 4');
+    const [statusText, setStatusText] = useState('Click on the button 5');
 
     async function btnClick() {
         // let command = {
@@ -26,7 +26,8 @@ function App() {
         let pkeysRes = await execHaloCmdWeb({"name": "get_pkeys"});
         let publicKey = pkeysRes.publicKeys[KEY_NO];
         console.log('publicKey', publicKey);
-        console.log('publicKeys', pkeysRes.publicKeys);
+        console.log('publicKey 0', pkeysRes.publicKeys[0]);
+        console.log('publicKey 1', pkeysRes.publicKeys[1]);
         console.log("END")
 
         // let res;
