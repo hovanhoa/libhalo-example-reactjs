@@ -1,0 +1,15 @@
+version: '3'
+services:
+  frontend:
+    image: nfc
+    build: .
+    container_name: nfc
+    ports:
+      - 8000:8000
+    volumes:
+      - ../libhalo-example-reactjs:/app/libhalo-example-reactjs
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 300m
+ 
