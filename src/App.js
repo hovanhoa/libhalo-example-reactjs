@@ -3,7 +3,7 @@ import './App.css';
 import {execHaloCmdWeb} from "@arx-research/libhalo/api/web.js";
 
 function App() {
-    const [statusText, setStatusText] = useState('Click on the button');
+    const [statusText, setStatusText] = useState('Click on the button 2');
 
     async function btnClick() {
         let command = {
@@ -11,16 +11,16 @@ function App() {
             keyNo: 1,
             message: "010203",
             /* uncomment the line below if you get an error about setting "command.legacySignCommand = true" */
-            legacySignCommand: true,
+            // legacySignCommand: true,
         };
 
         // Get public key
-        const KEY_NO = 1;
-        console.log("START")
-        let pkeysRes = await execHaloCmdWeb({"name": "get_pkeys"});
-        let publicKey = pkeysRes.publicKeys[KEY_NO];
-        console.log('publicKey', publicKey);
-        console.log("END")
+        // const KEY_NO = 1;
+        // console.log("START")
+        // let pkeysRes = await execHaloCmdWeb({"name": "get_pkeys"});
+        // let publicKey = pkeysRes.publicKeys[KEY_NO];
+        // console.log('publicKey', publicKey);
+        // console.log("END")
 
         let res;
         setStatusText("Init")
