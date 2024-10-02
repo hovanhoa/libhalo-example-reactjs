@@ -6,27 +6,27 @@ function App() {
     const [statusText, setStatusText] = useState('Click on the button 2');
 
     async function btnClick() {
-        // let command = {
-        //     name: "sign",
-        //     keyNo: 1,
-        //     message: "010203",
-        //     /* uncomment the line below if you get an error about setting "command.legacySignCommand = true" */
-        //     // legacySignCommand: true,
-        // };
-
         let command = {
-            "name": "gen_key",
-            "keyNo": 3,
-            "entropy": "3c825af7d2e1b02b6a00c257ebe883260b4aa6302c9878d412046d10141b261d"
+            name: "sign",
+            keyNo: 1,
+            message: "010203",
+            /* uncomment the line below if you get an error about setting "command.legacySignCommand = true" */
+            legacySignCommand: true,
         };
 
+        // let command = {
+        //     "name": "gen_key",
+        //     "keyNo": 3,
+        //     "entropy": "3c825af7d2e1b02b6a00c257ebe883260b4aa6302c9878d412046d10141b261d"
+        // };
+
         // Get public key
-        // const KEY_NO = 1;
-        // console.log("START")
-        // let pkeysRes = await execHaloCmdWeb({"name": "get_pkeys"});
-        // let publicKey = pkeysRes.publicKeys[KEY_NO];
-        // console.log('publicKey', publicKey);
-        // console.log("END")
+        const KEY_NO = 1;
+        console.log("START")
+        let pkeysRes = await execHaloCmdWeb({"name": "get_pkeys"});
+        let publicKey = pkeysRes.publicKeys[KEY_NO];
+        console.log('publicKey', publicKey);
+        console.log("END")
 
         let res;
         setStatusText("Init")
