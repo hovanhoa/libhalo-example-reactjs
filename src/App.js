@@ -6,12 +6,18 @@ function App() {
     const [statusText, setStatusText] = useState('Click on the button 2');
 
     async function btnClick() {
+        // let command = {
+        //     name: "sign",
+        //     keyNo: 1,
+        //     message: "010203",
+        //     /* uncomment the line below if you get an error about setting "command.legacySignCommand = true" */
+        //     // legacySignCommand: true,
+        // };
+
         let command = {
-            name: "sign",
-            keyNo: 1,
-            message: "010203",
-            /* uncomment the line below if you get an error about setting "command.legacySignCommand = true" */
-            // legacySignCommand: true,
+            "name": "gen_key",
+            "keyNo": 3,
+            "entropy": "3c825af7d2e1b02b6a00c257ebe883260b4aa6302c9878d412046d10141b261d"
         };
 
         // Get public key
