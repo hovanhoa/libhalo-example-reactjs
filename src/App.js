@@ -22,7 +22,6 @@ function App() {
         console.log('publicKey', publicKey);
         console.log("END")
 
-        let res;
 
         try {
             // --- request NFC command execution ---
