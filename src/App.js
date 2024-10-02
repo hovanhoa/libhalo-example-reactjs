@@ -11,7 +11,7 @@ function App() {
             keyNo: 1,
             message: "010203",
             /* uncomment the line below if you get an error about setting "command.legacySignCommand = true" */
-            // legacySignCommand: true,
+            legacySignCommand: true,
         };
 
         // Get public key
