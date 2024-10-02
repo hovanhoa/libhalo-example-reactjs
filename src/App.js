@@ -6,13 +6,13 @@ function App() {
     const [statusText, setStatusText] = useState('Click on the button 3');
 
     async function btnClick() {
-        let command = {
-            name: "sign",
-            keyNo: 1,
-            message: "010203",
-            /* uncomment the line below if you get an error about setting "command.legacySignCommand = true" */
-            legacySignCommand: true,
-        };
+        // let command = {
+        //     name: "sign",
+        //     keyNo: 1,
+        //     message: "010203",
+        //     /* uncomment the line below if you get an error about setting "command.legacySignCommand = true" */
+        //     legacySignCommand: true,
+        // };
 
         // let command = {
         //     "name": "gen_key",
@@ -28,30 +28,30 @@ function App() {
         console.log('publicKey', publicKey);
         console.log("END")
 
-        let res;
-        setStatusText("Init")
+        // let res;
+        // setStatusText("Init")
 
-        try {
-            // --- request NFC command execution ---
-            res = await execHaloCmdWeb(command, {
-                statusCallback: (cause) => {
-                    if (cause === "init") {
-                        setStatusText("Please tap the tag to the back of your smartphone and hold it...");
-                    } else if (cause === "retry") {
-                        setStatusText("Something went wrong, please try to tap the tag again...");
-                    } else if (cause === "scanned") {
-                        setStatusText("Tag scanned successfully, post-processing the result...");
-                    } else {
-                        setStatusText(cause);
-                    }
-                }
-            });
-            // the command has succeeded, display the result to the user
-            setStatusText(JSON.stringify(res, null, 4));
-        } catch (e) {
-            // the command has failed, display error to the user
-            setStatusText('Scanning failed, click on the button again to retry. Details: ' + String(e));
-        }
+        // try {
+        //     // --- request NFC command execution ---
+        //     res = await execHaloCmdWeb(command, {
+        //         statusCallback: (cause) => {
+        //             if (cause === "init") {
+        //                 setStatusText("Please tap the tag to the back of your smartphone and hold it...");
+        //             } else if (cause === "retry") {
+        //                 setStatusText("Something went wrong, please try to tap the tag again...");
+        //             } else if (cause === "scanned") {
+        //                 setStatusText("Tag scanned successfully, post-processing the result...");
+        //             } else {
+        //                 setStatusText(cause);
+        //             }
+        //         }
+        //     });
+        //     // the command has succeeded, display the result to the user
+        //     setStatusText(JSON.stringify(res, null, 4));
+        // } catch (e) {
+        //     // the command has failed, display error to the user
+        //     setStatusText('Scanning failed, click on the button again to retry. Details: ' + String(e));
+        // }
     }
 
     return (
