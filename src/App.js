@@ -14,6 +14,14 @@ function App() {
             // legacySignCommand: true,
         };
 
+        // Get public key
+        const KEY_NO = 1;
+        console.log("START")
+        let pkeysRes = await execHaloCmdWeb({"name": "get_pkeys"});
+        let publicKey = pkeysRes.publicKeys[KEY_NO];
+        console.log('publicKey', publicKey);
+        console.log("END")
+
         let res;
 
         try {
