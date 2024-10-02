@@ -31,7 +31,7 @@ function App() {
         console.log("END")
 
         // let res;
-        // setStatusText("Init")
+        setStatusText("Init")
 
         // try {
         //     // --- request NFC command execution ---
