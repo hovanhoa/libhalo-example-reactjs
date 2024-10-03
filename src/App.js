@@ -3,7 +3,7 @@ import './App.css';
 import {execHaloCmdWeb} from "@arx-research/libhalo/api/web.js";
 
 function App() {
-    const [statusText, setStatusText] = useState('Click on the button 6');
+    const [statusText, setStatusText] = useState('Click on the button 7');
 
     async function btnClick() {
         // let command = {
